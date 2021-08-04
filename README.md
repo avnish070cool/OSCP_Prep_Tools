@@ -83,4 +83,19 @@ About OSCP Prepration And Useful Tools and Techniques:
            
            exam:
            root@kali# nikto -h 192.168.1.2 --useproxy http://192.168.1.2:3128
-   3. 
+   3. gobuster:
+           gobuster is a tool for bruteforce the directory and file which is not avialble directly.
+           
+           uses:
+           root@kali# gobuster -h
+           
+           root@kali# gobuster dir --url http://192.168.1.3 -w /usr/share/dirbuster/directory-list-2.3-medium.txt
+   4. dirb/wfuzz:
+           same as gobuster.
+   5. FTP:
+           ftp for ftp login.
+          
+            root@kali# ftp 192.168..2.3 
+            root@kali# nc ip port
+   6. smbclient:
+            for Enumeration 
