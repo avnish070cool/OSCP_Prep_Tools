@@ -14,20 +14,21 @@ About OSCP Prepration And Useful Tools and Techniques:
         10. wpscan
         11. metasploit
   2. Importatnt Script:
-        1. linpeas.sh
-        2. winpeas.sh/winpeas.exe
-        3. powerup.ps1
+        1. linpeas.sh(https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS)
+        2. winpeas.sh/winpeas.exe(https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS)
+        3. powerup.ps1(https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1,
+                       https://www.harmj0y.net/blog/powershell/powerup-a-usage-guide/)
   
   3. Vulnerability:
-        1. LFI
-        2. RCE/RFI
-        3. Log Poisoning
-        4. FTP exploitation
+        1. LFI(https://highon.coffee/blog/lfi-cheat-sheet/)
+        2. RCE/RFI(https://book.hacktricks.xyz/pentesting-web/file-inclusion,https://github.com/russweir/OSCP-cheatsheet/blob/master/File%20Inclusion.md)
+        3. Log Poisoning(https://outpost24.com/blog/from-local-file-inclusion-to-remote-code-execution-part-1,https://www.hackingarticles.in/apache-log-poisoning-through-lfi/,https://shahjerry33.medium.com/rce-via-lfi-log-poisoning-the-death-potion-c0831cebc16d)
+        4. FTP exploitation(https://pentestlab.blog/2012/03/01/attacking-the-ftp-service/,https://shahmeeramir.com/penetration-testing-of-an-ftp-server-19afe538be4b)
         5. SMB Exploitation
-        6. NFS exploitation
+        6. NFS exploitation(https://book.hacktricks.xyz/pentesting/nfs-service-pentesting)
         7. CMS Exploitation
-        8. port forwarding and port turnling attack
-        9. SQL injection
+        8. port forwarding and port turnling attack(https://sushant747.gitbooks.io/total-oscp-guide/content/port_forwarding_and_tunneling.html,https://oscp.infosecsanyam.in/pivoting/tunneling-and-port-forwarding)
+        9. SQL injection(https://sushant747.gitbooks.io/total-oscp-guide/content/sql-injections.html,https://github.com/codingo/OSCP-2/blob/master/Documents/SQL%20Injection%20Cheatsheet.md)
    4. Port Scanning Process:
         1. FTP
         2. SSH
@@ -38,7 +39,7 @@ About OSCP Prepration And Useful Tools and Techniques:
         7. NFS
          
    5. Basics For Linux:
-        1. Some Command for Beginner
+        1. Some Command for Beginner(https://www.tutorialspoint.com/unix/index.htm,)
    6. Linux Privilege Escalation Process:
         1. Check Configuration File
         2. Check "sudo -l" permission
@@ -98,4 +99,34 @@ About OSCP Prepration And Useful Tools and Techniques:
             root@kali# ftp 192.168..2.3 
             root@kali# nc ip port
    6. smbclient:
-            for Enumeration 
+            for Enumeration Of SMB
+            root@kli# smbclient -L //IP --> for see the share's
+            
+            root@kali# smbclient //IP/share_name -U username --> to access the share's
+           
+           
+   7. Enum4linux:
+            root@kali# enum4linux IP --> for gather all imformation about the SMB.
+   8. RPC(111):
+            from this port we can basically scan all the username and other data about the target.
+            
+            root@kali# rpclient IP_address
+            rpc>help
+   9. NFS:
+            Network File System with the help this service we can share whole file system in the network.
+            if it's vulnerable then we can mount the share and acess the share.
+            --> command --> mount/unmount
+  
+  
+  Windows Privilege escalation Cheatsheet:
+            Link:
+                  https://0xsp.com/offensive/privilege-escalation-cheatsheet
+                  https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md
+                  https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_windows.html
+  Linux privilege Escalation cheat sheet:
+            link:
+                  https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/
+                  https://johnjhacking.com/blog/linux-privilege-escalation-quick-and-dirty/
+                  https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md
+                  https://www.hackingarticles.in/privilege-escalation-cheatsheet-vulnhub/
+                  https://cheatography.com/blacklist/cheat-sheets/linux-windows-privilege-escalation/
